@@ -1,0 +1,25 @@
+BASH LIBS
+
+  Bash libraries.
+
+INSTALL
+
+  make
+
+  or
+
+  make install
+
+  or
+
+  make install_path.sh
+  make install_util.sh
+
+UNINSTALL
+
+  make uninstall
+
+  or
+
+  make uninstall_path.sh
+  make uninstall_util.sh
