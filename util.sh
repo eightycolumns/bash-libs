@@ -1,14 +1,14 @@
-error() {
-  (($# == 1)) || error 'error() expects one argument'
+die() {
+  (($# == 1)) || die 'die() expects one argument'
   local -r message=$1
 
   echo "error: ${message}" 1>&2 && exit 1
 }
 
-export -f error
+export -f die
 
 usage() {
-  (($# == 1)) || error 'usage() expects one argument'
+  (($# == 1)) || die 'usage() expects one argument'
   local -r message=$1
 
   echo "usage: ${message}" 1>&2 && exit 64

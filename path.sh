@@ -1,7 +1,7 @@
 source "${HOME}/lib/util.sh"
 
 remove_from_path() {
-  (($# == 1)) || error 'remove_from_path() expects one argument'
+  (($# == 1)) || die 'remove_from_path() expects one argument'
   local -r dir=$1
 
   PATH=:${PATH}:
@@ -12,7 +12,7 @@ remove_from_path() {
 export -f remove_from_path
 
 append_to_path() {
-  (($# == 1)) || error 'append_to_path() expects one argument'
+  (($# == 1)) || die 'append_to_path() expects one argument'
   local -r dir=$1
 
   remove_from_path "${dir}"
@@ -22,7 +22,7 @@ append_to_path() {
 export -f append_to_path
 
 prepend_to_path() {
-  (($# == 1)) || error 'prepend_to_path() expects one argument'
+  (($# == 1)) || die 'prepend_to_path() expects one argument'
   local -r dir=$1
 
   remove_from_path "${dir}"
